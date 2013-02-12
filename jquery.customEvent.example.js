@@ -1,5 +1,5 @@
 // Example Initialization
-  // Add event name called "dataChanged"
+// Add event name called "dataChanged"
 	
 $.addCustomEvent( 'input#file_id','dataChanged',500,function(elem){
 	elem = $(elem);
