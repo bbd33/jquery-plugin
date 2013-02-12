@@ -71,4 +71,5 @@
 	$('input#file_id').bind('dataChanged',function(){
 		console.log($(this).val());
 	});
+	
 
