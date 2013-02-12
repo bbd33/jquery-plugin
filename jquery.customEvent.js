@@ -45,7 +45,7 @@
 	}
 	
 	// Example Initialization
-	// Add event name called "dataChenged"
+	// Add event name called "dataChanged"
 	
 	$.addCustomEvent( 'input#file_id','dataChanged',500,function(elem){
 		elem = $(elem);
@@ -66,7 +66,7 @@
 	});
 	
 	// Add event handler for recently created custom event 
-	// called "dataChenged"
+	// called "dataChanged"
 	
 	$('input#file_id').bind('dataChanged',function(){
 		console.log($(this).val());
