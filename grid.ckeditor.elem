@@ -1,0 +1,26 @@
+if( typeof options.ckeditor !== 'undefined')
+{
+	if(options.ckeditor)
+	{
+		$(elem).bind('dataChanged',function(){
+			if( $(this).attr('ckeditor') ){
+				var name=$(this).attr('name');
+				if( typeof CKEDITOR.instances[name] !== 'undefined' ){
+					try{CKEDITOR.instances[name].setData( $(this).val() );}catch(e){};
+				}
+			}
+		});
+		$(elem).bind('onShow',function(){
+			$(this).attr('ckeditor','true');
+			
+			var name=$(this).attr('name');
+			if( typeof CKEDITOR.instances[name] !== 'undefined' ){
+				try{CKEDITOR.instances[name].destroy();}catch(e){};
+			}
+			
+			CKEDITOR.replace(this);
+			CKEDITOR.instances[name].on('blur',function(){ CKEDITOR.instances[name].updateElement(); });	
+		
+		});
+	}
+}
